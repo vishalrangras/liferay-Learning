@@ -31,4 +31,11 @@ ResourceConstants.SCOPE_INDIVIDUAL, product.getPrimaryKey());
 prProductPersistence.remove(product);
 }
 
+public List<PRProduct> getAllProducts(long groupId)
+throws SystemException {
+List<PRProduct> products =
+prProductPersistence.findByGroupId(groupId);
+return products;
+}
+
 docroot/WEB-INF/src/com/inkwell/internet/productregistration/service/impl/PRProductLocalServiceImpl.java
