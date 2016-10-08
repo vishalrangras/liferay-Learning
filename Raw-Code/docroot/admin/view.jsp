@@ -1,3 +1,10 @@
+<liferay-ui:success key="productSaved" message="product-saved-successfully" />
+<liferay-ui:success key="productDeleted" message="productDeleted" />
+<liferay-ui:success key="productUpdated" message="productUpdated" />
+<liferay-ui:error key="fields-required" message="fields-required" />
+<liferay-ui:error key="error-deleting" message="error-deleting" />
+<liferay-ui:error key="error-updating" message="error-updating" />
+
 <portlet:actionURL name="addProduct" var="addProductURL"/>
 <aui:form action="<%= addProductURL.toString() %>" method="post">
 <aui:fieldset>
