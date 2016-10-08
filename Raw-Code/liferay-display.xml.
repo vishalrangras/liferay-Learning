@@ -1,0 +1,11 @@
+<display>
+
+  <category name="Inkwell Internet">
+    <portlet id="product-registration" />
+  </category>
+
+  <category name="category.hidden">
+    <portlet id="product-admin" />
+  </category>
+
+</display>
