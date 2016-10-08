@@ -43,3 +43,10 @@ uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
 ActionUtil" %>
 <%@ page import="com.inkwell.internet.productregistration.service.
  PRProductLocalServiceUtil" %>
+
+<%@ page import="
+ com.inkwell.internet.productregistration.service.
+ PRRegistrationLocalServiceUtil" %>
+<%@ page import="javax.portlet.PortletURL" %>
+<portlet:defineObjects />
+<liferay-theme:defineObjects />
