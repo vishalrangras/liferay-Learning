@@ -1,0 +1,47 @@
+<!-- Add the following code below "product-registration" portlet's auto-generated code! -->
+
+<portlet>
+<portlet-name>product-admin</portlet-name>
+<display-name>Product Administration</display-name>
+
+<portlet-class>
+com.inkwell.internet.productregistration.registration.portlet.ProductAdminPortlet
+</portlet-class>
+
+<init-param>
+<name>view-jsp</name>
+<value>/admin/view.jsp</value>
+</init-param>
+
+<init-param>
+<name>add-process-action-success-action</name>
+<value>false</value>
+</init-param>
+
+<expiration-cache>0</expiration-cache>
+<supports>
+<mime-type>text/html</mime-type>
+</supports>
+<resource-bundle>content.Language</resource-bundle>
+
+<portlet-info>
+<title>Product Administration</title>
+<short-title>Product Administration</short-title>
+<keywords>Product Administration</keywords>
+</portlet-info>
+
+<security-role-ref>
+<role-name>administrator</role-name>
+</security-role-ref>
+<security-role-ref>
+<role-name>guest</role-name>
+</security-role-ref>
+<security-role-ref>
+<role-name>power-user</role-name>
+</security-role-ref>
+<security-role-ref>
+<role-name>user</role-name>
+</security-role-ref>
+</portlet>
+
+<!-- docroot/WEB-INF/portlet.xml -->
