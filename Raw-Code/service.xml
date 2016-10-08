@@ -1,0 +1,27 @@
+<service-builder package-path="com.inkwell.internet.productregistration">
+<author>Rich Sezov</author>
+<namespace>PR</namespace>
+<entity name="PRProduct" local-service="true" remote-service="false">
+<column name="productId" type="long" primary="true" />
+<column name="productName" type="String" />
+<column name="serialNumber" type="String" />
+<column name="companyId" type="long" />
+<column name="groupId" type="long" />
+<order by="asc">
+<order-column name="productName" />
+</order>
+<finder name="G_PN" return-type="Collection">
+<finder-column name="groupId" />
+<finder-column name="productName" />
+</finder>
+
+<finder name="GroupId" return-type="Collection">
+<finder-column name="groupId" />
+</finder>
+<finder name="CompanyId" return-type="Collection">
+<finder-column name="companyId" />
+</finder>
+</entity>
+</service-builder>
+
+docroot/WEB-INF/service.xml
