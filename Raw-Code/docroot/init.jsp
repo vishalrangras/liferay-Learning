@@ -50,3 +50,9 @@ ActionUtil" %>
 <%@ page import="javax.portlet.PortletURL" %>
 <portlet:defineObjects />
 <liferay-theme:defineObjects />
+
+
+<!--
+One can include init.jsp using following directive:
+<%@include file="/init.jsp" %>
+-->
