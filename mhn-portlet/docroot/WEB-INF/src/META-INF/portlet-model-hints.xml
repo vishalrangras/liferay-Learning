@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.ihg.me2.mhn.portlet.model.SecurityNotification">
+		<field name="notificationId" type="long" />
+		<field name="gmScreenname" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="gmName" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="gmEmail" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="pcScreenname" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="pcName" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="pcEmail" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="secPcScreenname" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="secPcName" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="secPcEmail" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="fopsScreenname" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="fopsName" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="fopsEmail" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="holidexCode" type="String">
+			<hint name="max-length">5</hint>
+		</field>
+		<field name="hotelName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="impacted" type="String">
+			<hint name="max-length">50</hint>
+		</field>
+		<field name="startDate" type="Date">
+		</field>
+		<field name="endDate" type="Date">
+		</field>
+	</model>
+</model-hints>

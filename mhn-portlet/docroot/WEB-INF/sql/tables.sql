@@ -1,0 +1,20 @@
+create table Security_Notification (
+	notificationId LONG not null primary key,
+	GM_USR_ID VARCHAR(100) null,
+	GM_NM VARCHAR(250) null,
+	GM_EMAIL VARCHAR(250) null,
+	PC_USR_ID VARCHAR(100) null,
+	PC_NM VARCHAR(250) null,
+	PC_EMAIL VARCHAR(250) null,
+	SEC_PC_USR_ID VARCHAR(100) null,
+	SEC_PC_NM VARCHAR(250) null,
+	SEC_PC_EMAIL VARCHAR(250) null,
+	FOPS_USR_ID VARCHAR(100) null,
+	FOPS_NM VARCHAR(250) null,
+	FOPS_EMAIL VARCHAR(250) null,
+	HLDX_CD VARCHAR(5) null,
+	HTL_NM VARCHAR(500) null,
+	IMPACTED VARCHAR(1) null,
+	START_DT timestamp(6) null,
+	END_DT timestamp(6) null
+);

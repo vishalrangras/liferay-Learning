@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.ihg.me2.mhn.portlet.model.SecurityNotification" />
+	<class name="com.ihg.me2.mhn.portlet.model.impl.SecurityNotificationImpl" table="Security_Notification">
+		<cache usage="read-write" />
+		<id name="notificationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="gmScreenname" type="com.liferay.portal.dao.orm.hibernate.StringType" column="GM_USR_ID" />
+		<property name="gmName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="GM_NM" />
+		<property name="gmEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" column="GM_EMAIL" />
+		<property name="pcScreenname" type="com.liferay.portal.dao.orm.hibernate.StringType" column="PC_USR_ID" />
+		<property name="pcName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="PC_NM" />
+		<property name="pcEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" column="PC_EMAIL" />
+		<property name="secPcScreenname" type="com.liferay.portal.dao.orm.hibernate.StringType" column="SEC_PC_USR_ID" />
+		<property name="secPcName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="SEC_PC_NM" />
+		<property name="secPcEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" column="SEC_PC_EMAIL" />
+		<property name="fopsScreenname" type="com.liferay.portal.dao.orm.hibernate.StringType" column="FOPS_USR_ID" />
+		<property name="fopsName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="FOPS_NM" />
+		<property name="fopsEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" column="FOPS_EMAIL" />
+		<property name="holidexCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="HLDX_CD" />
+		<property name="hotelName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="HTL_NM" />
+		<property name="impacted" type="com.liferay.portal.dao.orm.hibernate.StringType" column="IMPACTED" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" column="START_DT" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" column="END_DT" />
+	</class>
+</hibernate-mapping>

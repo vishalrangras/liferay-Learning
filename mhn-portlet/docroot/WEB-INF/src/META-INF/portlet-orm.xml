@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.ihg.me2.mhn.portlet.model.impl.SecurityNotificationModelImpl">
+		<attributes>
+			<id name="notificationId" />
+			<basic name="gmScreenname">
+				<column name="GM_USR_ID" />
+			</basic>
+			<basic name="gmName">
+				<column name="GM_NM" />
+			</basic>
+			<basic name="gmEmail">
+				<column name="GM_EMAIL" />
+			</basic>
+			<basic name="pcScreenname">
+				<column name="PC_USR_ID" />
+			</basic>
+			<basic name="pcName">
+				<column name="PC_NM" />
+			</basic>
+			<basic name="pcEmail">
+				<column name="PC_EMAIL" />
+			</basic>
+			<basic name="secPcScreenname">
+				<column name="SEC_PC_USR_ID" />
+			</basic>
+			<basic name="secPcName">
+				<column name="SEC_PC_NM" />
+			</basic>
+			<basic name="secPcEmail">
+				<column name="SEC_PC_EMAIL" />
+			</basic>
+			<basic name="fopsScreenname">
+				<column name="FOPS_USR_ID" />
+			</basic>
+			<basic name="fopsName">
+				<column name="FOPS_NM" />
+			</basic>
+			<basic name="fopsEmail">
+				<column name="FOPS_EMAIL" />
+			</basic>
+			<basic name="holidexCode">
+				<column name="HLDX_CD" />
+			</basic>
+			<basic name="hotelName">
+				<column name="HTL_NM" />
+			</basic>
+			<basic name="impacted">
+				<column name="IMPACTED" />
+			</basic>
+			<basic name="startDate">
+				<column name="START_DT" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endDate">
+				<column name="END_DT" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.ihg.me2.mhn.portlet.model.impl.SecurityNotificationImpl" name="SecurityNotification">
+		<table name="Security_Notification" />
+		<attributes />
+	</entity>
+</entity-mappings>

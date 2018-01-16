@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<!-- 
+
+After building the service, ensure to convert the last two fields: START_DT and END_DT to TIMESTAMP(6)
+as it is the required data type by business. Service builder will convert it into Date by default.
+
+ -->
+
+<service-builder package-path="com.ihg.me2.mhn.portlet" auto-namespace-tables="false">
+	<author>vishal.rangras</author>
+	<namespace>MHN</namespace>
+    <entity name="SecurityNotification" local-service="true" remote-service="false" table="Security_Notification">
+        <column name="notificationId" type="long" primary="true"></column>
+        <column type="String" db-name="GM_USR_ID" name="gmScreenname"></column>
+        <column name="gmName" type="String" db-name="GM_NM"></column>
+        <column name="gmEmail" type="String" db-name="GM_EMAIL"></column>
+        <column name="pcScreenname" type="String" db-name="PC_USR_ID"></column>
+        <column name="pcName" type="String" db-name="PC_NM"></column>
+        <column name="pcEmail" type="String" db-name="PC_EMAIL"></column>
+        <column name="secPcScreenname" type="String" db-name="SEC_PC_USR_ID"></column>
+        <column name="secPcName" type="String" db-name="SEC_PC_NM"></column>
+        <column name="secPcEmail" type="String" db-name="SEC_PC_EMAIL"></column>
+        <column name="fopsScreenname" type="String" db-name="FOPS_USR_ID"></column>
+        <column name="fopsName" type="String" db-name="FOPS_NM"></column>
+        <column type="String" db-name="FOPS_EMAIL" name="fopsEmail"></column>
+        <column type="String" db-name="HLDX_CD" name="holidexCode"></column>
+        <column type="String" db-name="HTL_NM" name="hotelName"></column>
+        <column type="String" db-name="IMPACTED" name="impacted"></column>
+        <column type="Date" db-name="START_DT" name="startDate"></column>
+        <column type="Date" db-name="END_DT" name="endDate"></column>
+    </entity>
+</service-builder>
