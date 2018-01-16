@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.ihg.me2.model.impl.EmailAttachmentModelImpl">
+		<attributes>
+			<id name="EMAIL_ATTACHMENT_ID" />
+			<basic name="emailReminderId">
+				<column name="EMAIL_REMINDER_ID" />
+			</basic>
+			<basic name="attachmentFileName">
+				<column name="ATTACHMENT_FILE_NAME" />
+			</basic>
+			<basic name="attachmentFileText">
+				<column name="ATTACHMENT_FILE_TEXT" />
+			</basic>
+			<basic name="createUserId">
+				<column name="CREATE_USER_ID" />
+			</basic>
+			<basic name="createTimestamp">
+				<column name="CREATE_TIME_STAMP" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="lastUpdateUserId">
+				<column name="LAST_UPDATE_USER_ID" />
+			</basic>
+			<basic name="lastUpdateTimestamp">
+				<column name="LAST_UPDATE_TIMESTAMP" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ihg.me2.model.impl.EmailReminderModelImpl">
+		<attributes>
+			<id name="emailReminderId">
+				<column name="EMAIL_REMINDER_ID" />
+			</id>
+			<basic name="submitterName">
+				<column name="SUBMITTER_NM" />
+			</basic>
+			<basic name="submitterEmailId">
+				<column name="SUBMITTER_EMAIL_ID" />
+			</basic>
+			<basic name="reminderNumber">
+				<column name="REMINDER_NBR" />
+			</basic>
+			<basic name="scheduleTimestamp">
+				<column name="SCHED_TS" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="emailSubjectText">
+				<column name="EMAIL_SUBJECT_TXT" />
+			</basic>
+			<basic name="emailBodyText">
+				<column name="EMAIL_BODY_TXT" />
+			</basic>
+			<basic name="statusCode">
+				<column name="STAT_CD" />
+			</basic>
+			<basic name="createUserId">
+				<column name="CREAT_USR_ID" />
+			</basic>
+			<basic name="createTimestamp">
+				<column name="CREAT_TS" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="lastUpdateUserId">
+				<column name="LST_UPDT_USR_ID" />
+			</basic>
+			<basic name="lastUpdateTimestamp">
+				<column name="LST_UPDT_TS" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.ihg.me2.model.impl.EmailAttachmentImpl" name="EmailAttachment">
+		<table name="email_attachment" />
+		<attributes />
+	</entity>
+	<entity class="com.ihg.me2.model.impl.EmailReminderImpl" name="EmailReminder">
+		<table name="email_reminder" />
+		<attributes />
+	</entity>
+</entity-mappings>

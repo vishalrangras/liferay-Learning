@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.ihg.me2.model.EmailAttachment" />
+	<import class="com.ihg.me2.model.EmailReminder" />
+	<class name="com.ihg.me2.model.impl.EmailAttachmentImpl" table="email_attachment">
+		<cache usage="read-write" />
+		<id name="EMAIL_ATTACHMENT_ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="emailReminderId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="EMAIL_REMINDER_ID" />
+		<property name="attachmentFileName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="ATTACHMENT_FILE_NAME" />
+		<one-to-one name="attachmentFileTextBlobModel" access="com.liferay.portal.dao.orm.hibernate.PrivatePropertyAccessor" class="com.ihg.me2.model.EmailAttachmentAttachmentFileTextBlobModel" cascade="save-update" outer-join="false" constrained="true" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="CREATE_USER_ID" />
+		<property name="createTimestamp" type="org.hibernate.type.TimestampType" column="CREATE_TIME_STAMP" />
+		<property name="lastUpdateUserId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="LAST_UPDATE_USER_ID" />
+		<property name="lastUpdateTimestamp" type="org.hibernate.type.TimestampType" column="LAST_UPDATE_TIMESTAMP" />
+	</class>
+	<class name="com.ihg.me2.model.EmailAttachmentAttachmentFileTextBlobModel" table="email_attachment" lazy="true">
+		<id name="EMAIL_ATTACHMENT_ID" column="EMAIL_ATTACHMENT_ID">
+			<generator class="foreign">
+				<param name="property">com.ihg.me2.model.impl.EmailAttachmentImpl</param>
+			</generator>
+		</id>
+		<property column="ATTACHMENT_FILE_TEXT" name="attachmentFileTextBlob" type="blob" />
+	</class>
+	<class name="com.ihg.me2.model.impl.EmailReminderImpl" table="email_reminder">
+		<cache usage="read-write" />
+		<id name="emailReminderId" column="EMAIL_REMINDER_ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="submitterName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="SUBMITTER_NM" />
+		<property name="submitterEmailId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="SUBMITTER_EMAIL_ID" />
+		<property name="reminderNumber" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="REMINDER_NBR" />
+		<property name="scheduleTimestamp" type="org.hibernate.type.TimestampType" column="SCHED_TS" />
+		<property name="emailSubjectText" type="com.liferay.portal.dao.orm.hibernate.StringType" column="EMAIL_SUBJECT_TXT" />
+		<property name="emailBodyText" type="com.liferay.portal.dao.orm.hibernate.StringType" column="EMAIL_BODY_TXT" />
+		<property name="statusCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="STAT_CD" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="CREAT_USR_ID" />
+		<property name="createTimestamp" type="org.hibernate.type.TimestampType" column="CREAT_TS" />
+		<property name="lastUpdateUserId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="LST_UPDT_USR_ID" />
+		<property name="lastUpdateTimestamp" type="org.hibernate.type.TimestampType" column="LST_UPDT_TS" />
+	</class>
+</hibernate-mapping>

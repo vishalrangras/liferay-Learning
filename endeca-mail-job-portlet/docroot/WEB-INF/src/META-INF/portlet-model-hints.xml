@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.ihg.me2.model.EmailAttachment">
+		<field name="EMAIL_ATTACHMENT_ID" type="long" />
+		<field name="emailReminderId" type="long" />
+		<field name="attachmentFileName" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="attachmentFileText" type="Blob" />
+		<field name="createUserId" type="String">
+			<hint name="max-length">50</hint>
+		</field>
+		<field name="createTimestamp" type="Date" />
+		<field name="lastUpdateUserId" type="String">
+			<hint name="max-length">50</hint>
+		</field>
+		<field name="lastUpdateTimestamp" type="Date" />
+	</model>
+	<model name="com.ihg.me2.model.EmailReminder">
+		<field name="emailReminderId" type="long" />
+		<field name="submitterName" type="String">
+			<hint name="max-length">150</hint>
+		</field>
+		<field name="submitterEmailId" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="reminderNumber" type="int" />
+		<field name="scheduleTimestamp" type="Date" />
+		<field name="emailSubjectText" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="emailBodyText" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="statusCode" type="String" />
+		<field name="createUserId" type="String">
+			<hint name="max-length">50</hint>
+		</field>
+		<field name="createTimestamp" type="Date" />
+		<field name="lastUpdateUserId" type="String">
+			<hint name="max-length">50</hint>
+		</field>
+		<field name="lastUpdateTimestamp" type="Date" />
+	</model>
+</model-hints>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_endeca_EmailAttachmentService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.me2.ihg.com" xmlns:cmp-ns="http://model.me2.ihg.com" qname="ns:ArrayOf_tns2_EmailAttachmentSoap" type="java:com.ihg.me2.model.EmailAttachmentSoap[]" innerType="cmp-ns:EmailAttachmentSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.me2.ihg.com" qname="ns:EmailAttachmentSoap" type="java:com.ihg.me2.model.EmailAttachmentSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.me2.ihg.com" xmlns:rtns="http://model.me2.ihg.com" name="addEmailAttachment" qname="operNS:addEmailAttachment" returnQName="addEmailAttachmentReturn" returnType="rtns:EmailAttachmentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="emailReminderId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="attachmentFileName" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="attachmentFileTxt" type="tns:anyType"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="createUserId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="createTimestamp" type="tns:dateTime"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="lastUpdateUserId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="lastUpdateTimestamp" type="tns:dateTime"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.me2.ihg.com" xmlns:rtns="http://model.me2.ihg.com" name="getEmailAttachmentById" qname="operNS:getEmailAttachmentById" returnQName="getEmailAttachmentByIdReturn" returnType="rtns:EmailAttachmentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="emailAttachmentId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.me2.ihg.com" xmlns:rtns="urn:http.service.me2.ihg.com" xmlns:tns2="http://model.me2.ihg.com" name="getEmailAttachmentByReminderId" qname="operNS:getEmailAttachmentByReminderId" returnQName="getEmailAttachmentByReminderIdReturn" returnType="rtns:ArrayOf_tns2_EmailAttachmentSoap" returnItemType="tns2:EmailAttachmentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="emailReminderId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.me2.ihg.com" xmlns:rtns="http://model.me2.ihg.com" name="updateEmailAttachment" qname="operNS:updateEmailAttachment" returnQName="updateEmailAttachmentReturn" returnType="rtns:EmailAttachmentSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="emailAttachmentId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="attachmentFileName" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="attachmentFileTxt" type="tns:anyType"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="lastUpdateUserId" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="lastUpdateTimestamp" type="tns:dateTime"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addEmailAttachment getEmailAttachmentById getEmailAttachmentByReminderId updateEmailAttachment" />
+		<parameter name="className" value="com.ihg.me2.service.http.EmailAttachmentServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.me2.ihg.com,urn:http.service.me2.ihg.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="EmailAttachmentServiceSoap" />
+		<parameter name="wsdlServiceElement" value="EmailAttachmentServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_endeca_EmailAttachmentService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.me2.ihg.com" />
+	</service>
+</deployment>

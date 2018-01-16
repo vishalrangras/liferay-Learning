@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.ihg.me2.service.EmailAttachmentLocalService" class="com.ihg.me2.service.impl.EmailAttachmentLocalServiceImpl" />
+	<bean id="com.ihg.me2.service.EmailAttachmentService" class="com.ihg.me2.service.impl.EmailAttachmentServiceImpl" />
+	<bean id="com.ihg.me2.service.persistence.EmailAttachmentPersistence" class="com.ihg.me2.service.persistence.EmailAttachmentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ihg.me2.service.EmailReminderLocalService" class="com.ihg.me2.service.impl.EmailReminderLocalServiceImpl" />
+	<bean id="com.ihg.me2.service.EmailReminderService" class="com.ihg.me2.service.impl.EmailReminderServiceImpl" />
+	<bean id="com.ihg.me2.service.persistence.EmailReminderPersistence" class="com.ihg.me2.service.persistence.EmailReminderPersistenceImpl" parent="basePersistence" />
+</beans>

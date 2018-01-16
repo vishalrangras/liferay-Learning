@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.ihg.me2">
+	<author>vishal.rangras</author>
+	<namespace>endeca</namespace>
+	<entity name="EmailReminder" local-service="true" table="email_reminder" remote-service="true">
+		<column name="emailReminderId" type="long" primary="true" db-name="EMAIL_REMINDER_ID"></column>
+		<column name="submitterName" type="String" db-name="SUBMITTER_NM"></column>
+		<column name="submitterEmailId" type="String" db-name="SUBMITTER_EMAIL_ID"></column>
+		<column name="reminderNumber" type="int" db-name="REMINDER_NBR"></column>
+		<column name="scheduleTimestamp" type="Date" db-name="SCHED_TS"></column>
+		<column name="emailSubjectText" type="String" db-name="EMAIL_SUBJECT_TXT"></column>
+		<column name="emailBodyText" type="String" db-name="EMAIL_BODY_TXT"></column>
+		<column name="statusCode" type="String" db-name="STAT_CD"></column>
+		<column name="createUserId" type="String" db-name="CREAT_USR_ID"></column>
+		<column name="createTimestamp" type="Date" db-name="CREAT_TS"></column>
+		<column name="lastUpdateUserId" type="String" db-name="LST_UPDT_USR_ID"></column>
+		<column name="lastUpdateTimestamp" type="Date" db-name="LST_UPDT_TS"></column>
+		<finder name="EmailReminderId" return-type="EmailReminder">
+			<finder-column name="emailReminderId"></finder-column>
+		</finder>
+		<finder name="Schedule" return-type="Collection">
+			<finder-column name="scheduleTimestamp"></finder-column>
+		</finder>
+		<!-- Status Codes: 0 - Delete, 1 - Pending, 2 - Completed -->
+		<finder name="Status" return-type="Collection">
+			<finder-column name="statusCode" arrayable-operator="OR"></finder-column>
+		</finder>
+	</entity>
+	<entity name="EmailAttachment" local-service="true" table="email_attachment" remote-service="true">
+		<column name="EMAIL_ATTACHMENT_ID" type="long" primary="true" db-name="EMAIL_ATTACHMENT_ID"></column>
+		<column name="emailReminderId" type="long" db-name="EMAIL_REMINDER_ID"></column>
+		<column name="attachmentFileName" type="String" db-name="ATTACHMENT_FILE_NAME"></column>
+		<column name="attachmentFileText" type="Blob" db-name="ATTACHMENT_FILE_TEXT"></column>
+		<column name="createUserId" type="String" db-name="CREATE_USER_ID"></column>
+		<column name="createTimestamp" type="Date" db-name="CREATE_TIME_STAMP"></column>
+		<column name="lastUpdateUserId" type="String" db-name="LAST_UPDATE_USER_ID"></column>
+		<column name="lastUpdateTimestamp" type="Date" db-name="LAST_UPDATE_TIMESTAMP"></column>
+		<finder name="EmailAttachmentId" return-type="EmailAttachment">
+			<finder-column name="EMAIL_ATTACHMENT_ID"></finder-column>
+		</finder>
+		<finder name="EmailReminderId" return-type="Collection">
+			<finder-column name="emailReminderId"></finder-column>
+		</finder>
+	</entity>
+</service-builder>
